@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ishupal22</groupId>
+    <artifactId>course-bom</artifactId>
+    <version>1.0.0-RELEASE</version>
+  </parent>
+  <groupId>ishupal22</groupId>
+  <artifactId>course-parent-pom</artifactId>
+  <version>1.0.0-RELEASE</version>
+  <packaging>pom</packaging>
+  <name>course-parent-pom</name>
+  <properties>
+        <exchange.mule.maven.plugin>0.0.8</exchange.mule.maven.plugin>
+  <deployment.prefix>ips1201-</deployment.prefix>
+  <deployment.suffix>-${deployment.env}</deployment.suffix>
+  <deployment.name>${deployment.prefix}${project.artifactId}${deployment.suffix}</deployment.name>
+  </properties>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/resources-filtered</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.mule.tools.maven</groupId>
+          <artifactId>mule-maven-plugin</artifactId>
+          <version>${mule.maven.plugin.version}</version>
+          <extensions>true</extensions>
+          <configuration>
+              <cloudHubDeployment>
+              <!--  This server cloudhub is defined in maven settings.xml -->
+                <server>cloudhub</server>
+                <region>us-east-2</region>
+<!-- This is from BOM-->
+                <muleVersion>${aap.runtime.semver}</muleVersion>
+                <!-- This is from BOM END-->
+                
+                <workers>1</workers>
+                <objectStoreV2>true</objectStoreV2>
+                <applicationName>${deployment.name}</applicationName>
+                <workerType>Micro</workerType>
+                <!--  This is from VM argument -->
+                <environment>${deployment.env}</environment>
+                <properties>
+                <!-- This is from Maven parameter + VM Argument; the element name is VM argument and value is the param name for maven-->
+                <env>${deployment.env}</env>
+                <encrypt.key>${encrypt.key}</encrypt.key>
+                <anypoint.platform.client_id>${ap.client_id}</anypoint.platform.client_id>
+                <anypoint.platform.client_secret>${ap.client_secret}</anypoint.platform.client_secret>
+                </properties>
+              </cloudHubDeployment>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
