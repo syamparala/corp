@@ -58,7 +58,7 @@
     <repository>
       <id>nexus-releases-prv</id>
       <name>nexus-releases-prv</name>
-      <url>http://172.17.0.2:8083/repository/maven-releases/</url>
+      <url>http://nexus:8083/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
 
