@@ -3,17 +3,17 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>ishupal22</groupId>
+    <groupId>com.mulesoft.cs</groupId>
     <artifactId>course-bom</artifactId>
     <version>1.0.0-RELEASE</version>
   </parent>
-  <groupId>ishupal22</groupId>
+  <groupId>com.mulesoft.cs</groupId>
   <artifactId>course-parent-pom</artifactId>
-  <version>1.0.1-RELEASE</version>
+  <version>1.0.0-RELEASE</version>
   <packaging>pom</packaging>
   <name>course-parent-pom</name>
   <properties>
-        <exchange.mule.maven.plugin>0.0.8</exchange.mule.maven.plugin>
+  <exchange.mule.maven.plugin>0.0.8</exchange.mule.maven.plugin>
   <deployment.prefix>ips1201-</deployment.prefix>
   <deployment.suffix>-${deployment.env}</deployment.suffix>
   <deployment.name>${deployment.prefix}${project.artifactId}${deployment.suffix}</deployment.name>
