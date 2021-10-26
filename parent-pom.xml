@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.mulesoft.cs</groupId>
     <artifactId>course-bom</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.1-RELEASE</version>
   </parent>
   <groupId>com.mulesoft.cs</groupId>
   <artifactId>course-parent-pom</artifactId>
@@ -61,6 +61,7 @@
                 <encrypt.key>${encrypt.key}</encrypt.key>
                 <anypoint.platform.client_id>${ap.client_id}</anypoint.platform.client_id>
                 <anypoint.platform.client_secret>${ap.client_secret}</anypoint.platform.client_secret>
+                <applyLatestRuntimePatch>true</applyLatestRuntimePatch>
                 </properties>
               </cloudHubDeployment>
           </configuration>
