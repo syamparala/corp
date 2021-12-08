@@ -19,16 +19,6 @@
   <deployment.name>${deployment.prefix}${project.artifactId}${deployment.suffix}</deployment.name>
   </properties>
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>false</filtering>
-      </resource>
-      <resource>
-        <directory>src/main/resources-filtered</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
     <pluginManagement>
       <plugins>
         <plugin>
