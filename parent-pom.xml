@@ -14,7 +14,7 @@
   <name>course-parent-pom</name>
   <properties>
   <exchange.mule.maven.plugin>0.0.8</exchange.mule.maven.plugin>
-  <deployment.prefix>ips1201-</deployment.prefix>
+  <deployment.prefix>orderfulfilment-</deployment.prefix>
   <deployment.suffix>-${deployment.env}</deployment.suffix>
   <deployment.name>${deployment.prefix}${project.artifactId}${deployment.suffix}</deployment.name>
   </properties>
