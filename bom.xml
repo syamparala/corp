@@ -67,6 +67,7 @@
       <name>nexus-releases-prv</name>
       <url>http://nexus:8081/repository/maven-releases/</url>
     </repository>
+		
   </distributionManagement>
 
 </project>
